@@ -1,0 +1,30 @@
+.tile-open {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70px;
+    height: 70px;
+    border: 7px solid rgb(253, 156, 158);
+    border-radius: 15px;
+    background-color: bisque;
+}
+
+.tile-closed {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: rgb(215, 214, 214);
+}
+
+.tile-open, .tile-closed:hover {
+    cursor: pointer;
+}
+
+.emoji {
+    text-align: center;
+    font-size: 30px;
+    user-select: none;
+}
