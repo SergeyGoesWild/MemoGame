@@ -1,18 +1,11 @@
 import { useState } from "react";
 import "../styles/Tile.style.css";
 
-function Tile({ emoji, incrementClicked }) {
-  const [clicked, setClicked] = useState(false);
-
-  const handleClick = () => {
-    setClicked(!clicked);
-    incrementClicked();
-  };
-
+function Tile({ tileObj, onTileClick }) {
   return (
-    <div onClick={handleClick}>
-      <div className={clicked ? "tile-open" : "tile-closed"}>
-        {clicked && <p className="emoji">{emoji}</p>}
+    <div onClick={onTileClick}>
+      <div className={tileObj.clicked ? "tile-open" : "tile-closed"}>
+        {tileObj.clicked && <p className="emoji">{tileObj.pic}</p>}
       </div>
     </div>
   );
