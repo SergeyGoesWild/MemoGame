@@ -1,4 +1,4 @@
-export const emojiBase = [
+const emojiBase = [
   "😭",
   "😂",
   "😉",
@@ -45,11 +45,12 @@ function TableGenerator(numberOfTiles) {
     usedEmojis = [...usedEmojis, randomEmoji];
     id += 2;
   }
-  const shuffledTable = shuffleArray(objectTable);
+  const shuffledTable = shuffleTable(objectTable);
+
   return shuffledTable;
 }
 
-function shuffleArray(array) {
+function shuffleTable(array) {
   const shuffledArray = array.slice();
   for (let i = shuffledArray.length - 1; i > 0; i--) {
     const randomIndex = Math.floor(Math.random() * (i + 1));

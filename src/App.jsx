@@ -4,6 +4,8 @@ import Tile from "./components/Tile";
 import TableGenerator from "./scripts/TableGenerator";
 import InputModal from "./components/InputModal";
 // const INIT_STATE = TableGenerator(12);
+let score = 0;
+let tilesUsed = 0;
 
 function App() {
   const [data, setData] = useState();
@@ -14,7 +16,6 @@ function App() {
 
   // может переделать эту систему на супер-элемент с модалкой и компонентом игры
   // где inputData будет в него передаватся через проп
-
   useEffect(() => {
     setData(TableGenerator(inputData));
   }, [inputData]);
@@ -25,8 +26,10 @@ function App() {
     } else {
       const activeTiles = [firstActiveTile, tile];
       if (activeTiles[0].pic === activeTiles[1].pic) {
+        score += 1;
         guessedRight();
       } else {
+        score += 1;
         guessedWrong(activeTiles);
       }
     }
@@ -46,22 +49,33 @@ function App() {
   };
 
   const guessedWrong = (activeTiles) => {
-    console.log("guessed WRONG");
+    setPause(true);
+    console.log("Score : ", score);
     setTimeout(() => {
       setClosed(activeTiles[0].id);
       setClosed(activeTiles[1].id);
+      setPause(false);
     }, 1000);
     setFirstActiveTile(null);
   };
 
   const guessedRight = () => {
-    console.log("guessed RIGHT");
+    console.log("Score : ", score);
+    tilesUsed += 2;
+    console.log("USED : ", tilesUsed);
     setFirstActiveTile(null);
+    if (tilesUsed == inputData) {
+      onVictory();
+    }
   };
 
   const onSubmitButtonPress = (inputValue) => {
     setInputData(inputValue);
     setInputSubmitted(true);
+  };
+
+  const onVictory = () => {
+    console.log("You won! Your score is: ", score);
   };
 
   return (
@@ -76,6 +90,7 @@ function App() {
               <Tile
                 key={item.id}
                 tileObj={item}
+                pause={pause}
                 onTileClick={() => {
                   handleTileClick(item.id);
                 }}
