@@ -3,13 +3,21 @@ import "./App.css";
 import Tile from "./components/Tile";
 import TableGenerator from "./scripts/TableGenerator";
 import InputModal from "./components/InputModal";
-const INIT_STATE = TableGenerator(12);
+// const INIT_STATE = TableGenerator(12);
 
 function App() {
-  const [data, setData] = useState(INIT_STATE);
+  const [data, setData] = useState();
+  const [inputData, setInputData] = useState(0);
   const [firstActiveTile, setFirstActiveTile] = useState(null);
   const [inputSubmited, setInputSubmitted] = useState(false);
   const [pause, setPause] = useState(false);
+
+  // может переделать эту систему на супер-элемент с модалкой и компонентом игры
+  // где inputData будет в него передаватся через проп
+
+  useEffect(() => {
+    setData(TableGenerator(inputData));
+  }, [inputData]);
 
   const handleActiveTiles = (tile) => {
     if (firstActiveTile === null) {
@@ -52,6 +60,7 @@ function App() {
   };
 
   const onSubmitButtonPress = (inputValue) => {
+    setInputData(inputValue);
     setInputSubmitted(true);
   };
 
