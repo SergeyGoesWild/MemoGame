@@ -16,15 +16,12 @@ function InputModal({ onSubmitButtonPress }) {
           setInputConform(true);
         } else {
           console.log("Division");
-          setInputConform(false);
         }
       } else {
         console.log("Size");
-        setInputConform(false);
       }
     } else {
       console.log("Symbols");
-      setInputConform(false);
     }
   };
 

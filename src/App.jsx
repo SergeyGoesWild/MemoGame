@@ -3,6 +3,8 @@ import "./App.css";
 import Tile from "./components/Tile";
 import TableGenerator from "./scripts/TableGenerator";
 import InputModal from "./components/InputModal";
+import EndGameModal from "./components/EndGameModal";
+
 // const INIT_STATE = TableGenerator(12);
 let score = 0;
 let tilesUsed = 0;
@@ -13,12 +15,13 @@ function App() {
   const [firstActiveTile, setFirstActiveTile] = useState(null);
   const [inputSubmited, setInputSubmitted] = useState(false);
   const [pause, setPause] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
 
   // может переделать эту систему на супер-элемент с модалкой и компонентом игры
   // где inputData будет в него передаватся через проп
-  useEffect(() => {
-    setData(TableGenerator(inputData));
-  }, [inputData]);
+  // useEffect(() => {
+  //   setData(TableGenerator(inputData));
+  // }, [inputData]);
 
   const handleActiveTiles = (tile) => {
     if (firstActiveTile === null) {
@@ -71,17 +74,30 @@ function App() {
 
   const onSubmitButtonPress = (inputValue) => {
     setInputData(inputValue);
+    setData(TableGenerator(inputValue));
     setInputSubmitted(true);
   };
 
+  const onRestartPress = () => {
+    console.log("RESTART");
+    score = 0;
+    tilesUsed = 0;
+    setInputSubmitted(false);
+    setPause(false);
+    setGameOver(false);
+  };
+
   const onVictory = () => {
-    console.log("You won! Your score is: ", score);
+    setGameOver(true);
   };
 
   return (
     <>
       {!inputSubmited && (
         <InputModal onSubmitButtonPress={onSubmitButtonPress} />
+      )}
+      {gameOver && (
+        <EndGameModal score={score} onRestartPress={onRestartPress} />
       )}
       {inputSubmited && (
         <div className="container-flex">
