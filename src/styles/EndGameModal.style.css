@@ -20,15 +20,8 @@
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
 
-  .form-container {
+  .txt-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,16 +29,16 @@
     height: 100%;
   }
 
-  .form-container label {
-    margin-bottom: 10px;
-  }
-
-  .no-conform {
-    color: rgb(255, 6, 6);
-    font-size: 12px;
-    margin-top: 3px;
+  .text {
+    margin: 10px 0;
+    text-align: center;
   }
   
+  .text * {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
   .button {
     margin-top: 10px;
     align-items: center;
@@ -89,22 +82,3 @@
   .button:focus:not(:active) {
     box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
   }
-
-  .input-field {
-  font-size: 14px;
-  border-radius: 6px;
-  line-height: 1.5;
-  padding: 5px 10px;
-  transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
-  border: 2px solid #dee1e2;
-  background: #dee1e2;
-  display: block;
-  height: 36px;
-  :hover {
-      border-color: #ccc;
-  }
-  :focus{
-      border-color: #4F58FD;
-      background: #fff;
-  }
-}
