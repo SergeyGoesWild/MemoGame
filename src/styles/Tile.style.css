@@ -1,10 +1,23 @@
+.tile-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
 .tile-open {
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 70px;
     height: 70px;
-    border: 7px solid rgb(253, 156, 158);
+    border: 7px solid rgb(255, 193, 194);
     border-radius: 15px;
     background-color: bisque;
 }
@@ -16,7 +29,11 @@
     width: 70px;
     height: 70px;
     border-radius: 15px;
-    background-color: rgb(215, 214, 214);
+    background-color: rgb(226, 226, 226);
+    transition: background-color 0.5s;
+}
+.tile-closed:hover {
+    background-color: rgb(239, 237, 237);
 }
 
 .tile-open, .tile-closed:hover {

@@ -4,20 +4,17 @@ import Tile from "./components/Tile";
 import TableGenerator from "./scripts/TableGenerator";
 import InputModal from "./components/InputModal";
 import EndGameModal from "./components/EndGameModal";
-import Confetti from "react-confetti";
 
 // const INIT_STATE = TableGenerator(12);
 let score = 0;
 let tilesUsed = 0;
 
-function App() {
-  const [data, setData] = useState();
-  const [inputData, setInputData] = useState(0);
-  const [firstActiveTile, setFirstActiveTile] = useState(null);
-  const [inputSubmited, setInputSubmitted] = useState(false);
-  const [pause, setPause] = useState(false);
-  const [gameOver, setGameOver] = useState(false);
-  const [confNumber, setConfNumber] = useState(0);
+function App2() {
+  const [modalOn, setModalOn] = useState(false);
+
+  const handleModal = () => {
+    setModalOn(!modalOn);
+  };
   // может переделать эту систему на супер-элемент с модалкой и компонентом игры
   // где inputData будет в него передаватся через проп
   // useEffect(() => {
@@ -83,44 +80,26 @@ function App() {
     console.log("RESTART");
     score = 0;
     tilesUsed = 0;
-    setConfNumber(0);
     setInputSubmitted(false);
     setPause(false);
     setGameOver(false);
   };
 
   const onVictory = () => {
-    setConfNumber(200);
     setGameOver(true);
   };
 
   return (
     <>
-      <Confetti numberOfPieces={confNumber} />
-      {!inputSubmited && (
-        <InputModal onSubmitButtonPress={onSubmitButtonPress} />
-      )}
-      {gameOver && (
-        <EndGameModal score={score} onRestartPress={onRestartPress} />
-      )}
-      {inputSubmited && (
-        <div className="container-flex">
-          <div className="container-grid">
-            {data.map((item) => (
-              <Tile
-                key={item.id}
-                tileObj={item}
-                pause={pause}
-                onTileClick={() => {
-                  handleTileClick(item.id);
-                }}
-              />
-            ))}
-          </div>
-        </div>
+      <button onClick={handleModal}>press</button>
+      {modalOn && (
+        <InputModal
+          className="popup"
+          onSubmitButtonPress={onSubmitButtonPress}
+        />
       )}
     </>
   );
 }
 
-export default App;
+export default App2;

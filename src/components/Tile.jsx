@@ -4,6 +4,7 @@ import "../styles/Tile.style.css";
 function Tile({ tileObj, pause, onTileClick }) {
   return (
     <div
+      className="tile-container"
       onClick={() => {
         if (tileObj.clicked === false && pause === false) {
           onTileClick();
