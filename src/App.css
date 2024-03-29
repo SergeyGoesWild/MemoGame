@@ -1,3 +1,28 @@
+.container-all {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background: #FFEFBA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    display: flex;
+    justify-content: center;
+    /* background:
+    radial-gradient(circle at 100% 50%, transparent 20%, #00D4F0 21%,
+    #00D4F0 34%, transparent 35%, transparent),
+    radial-gradient(circle at 0% 50%, transparent 20%, #00D4F0 21%, #00D4F0 34%, transparent 35%, transparent) 0 -50px;
+    background-color: #EEEEEE;
+    background-size: 75px 100px; */
+}
+
 .container-flex {
     display: flex;
     margin-left: 20%;

@@ -104,6 +104,7 @@ function App() {
         <EndGameModal score={score} onRestartPress={onRestartPress} />
       )}
       {inputSubmited && (
+        // <div className="container-all">
         <div className="container-flex">
           <div className="container-grid">
             {data.map((item) => (
@@ -118,6 +119,7 @@ function App() {
             ))}
           </div>
         </div>
+        // </div>
       )}
     </>
   );
