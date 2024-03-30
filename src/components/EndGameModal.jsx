@@ -5,7 +5,7 @@ function EndGameModal({ score, onRestartPress }) {
   return (
     <div>
       <div className="overlay">
-        <div className="modal">
+        <div className="modal-end">
           <div className="txt-container">
             <div className="text">
               <h4>🥳 Congrats! 🥳</h4>

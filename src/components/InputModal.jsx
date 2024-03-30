@@ -43,9 +43,9 @@ function InputModal({ onSubmitButtonPress }) {
   return (
     <div>
       <div className="overlay">
-        <div className="modal">
+        <div className="modal-input">
           <form onSubmit={handleSubmit} className="form-container">
-            <label>Enter number of tiles:</label>
+            <label className="label-form">Enter number of tiles:</label>
             <input
               type="text"
               value={inputValue}
