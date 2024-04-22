@@ -8,7 +8,7 @@ function EndGameModal({ score, onRestartPress }) {
         <div className="modal-end">
           <div className="txt-container">
             <div className="text">
-              <h4>🥳 Congrats! 🥳</h4>
+              <h2>🥳 Congrats! 🥳</h2>
               <p>Your score is: {score}</p>
             </div>
             <button onClick={onRestartPress} className="button">

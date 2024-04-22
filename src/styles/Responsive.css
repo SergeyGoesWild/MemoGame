@@ -1,0 +1,55 @@
+/* *************************************************************** */
+
+@media screen and (max-width: 376px) {
+    .container-grid {
+        width: 200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 50px);
+        justify-content: space-between;
+        grid-gap: 10px;
+    }
+    .modal-end {
+        width: 80%;
+        height: 140px;
+    }
+    .label-form {
+        font-size: 13px;
+    }
+    .button {
+        padding: 5px 14px;
+        font-size: 0.75rem;
+        margin-top: 8px;
+    }
+      .no-conform {
+        font-size: 10px;
+      }
+      .modal-input {
+        width: 70%;
+        height: 130px;
+      }
+      .label-form {
+        font-size: 13px;
+      }
+      .button {
+        padding: 5px 14px;
+        font-size: 0.75rem;
+        margin-top: 8px;
+      }
+      .no-conform {
+        font-size: 10px;
+      }
+}
+
+
+/* *************************************************************** */
+
+/* @media screen and (max-width: 768px) {
+    .container-grid {
+        width: 250px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 70px);
+        justify-content: space-between;
+        grid-gap: 10px;
+    }
+} */
+

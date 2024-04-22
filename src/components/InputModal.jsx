@@ -41,11 +41,11 @@ function InputModal({ onSubmitButtonPress }) {
   };
 
   return (
-    <div>
+    <div className="overlay-container">
       <div className="overlay">
         <div className="modal-input">
           <form onSubmit={handleSubmit} className="form-container">
-            <label className="label-form">Enter number of tiles:</label>
+            <label className="label-form-entry">Enter number of tiles:</label>
             <input
               type="text"
               value={inputValue}
@@ -53,8 +53,8 @@ function InputModal({ onSubmitButtonPress }) {
               placeholder="Type here"
               className="input-field"
             />
-            <span className="no-conform">{placeHolder}</span>
-            <button type="submit" className="button">
+            <span className="no-conform-entry">{placeHolder}</span>
+            <button type="submit" className="button-entry">
               Submit
             </button>
           </form>

@@ -1,10 +1,16 @@
+.overlay-container {
+  width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.5); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,13 +56,13 @@
     margin-bottom: 10px;
   }
 
-  .no-conform {
+  .no-conform-entry {
     color: rgb(255, 6, 6);
     font-size: 12px;
     margin-top: 3px;
   }
   
-  .button {
+  .button-entry {
     margin-top: 10px;
     align-items: center;
     appearance: none;
@@ -87,16 +93,16 @@
     white-space: nowrap;
   }
   
-  .button:active,
-  .button:focus {
+  .button-entry:active,
+  .button-entry:focus {
     outline: none;
   }
   
-  .button:hover {
+  .button-entry:hover {
     background-position: -20px -20px;
   }
   
-  .button:focus:not(:active) {
+  .button-entry:focus:not(:active) {
     box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
   }
 
@@ -120,24 +126,52 @@
   }
 }
 
-.label-form {
+.label-form-entry {
   font-size: 16px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 414px) {
   .modal-input {
+    width: 70%;
+    height: 170px;
+  }
+  .label-form-entry {
+    font-size: 17px;
+  }
+  .button-entry {
+    padding: 7px 20px;
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+  .no-conform-entry {
+    font-size: 14px;
+  }
+  .input-field {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 415px) and (max-width: 1025px) {
+  .modal-input {
+    width: 55%;
+    height: 260px;
+  }
+  .label-form-entry {
+    font-size: 25px;
+  }
+  .button-entry {
+    padding: 11px 35px;
+    font-size: 1.5rem;
+    margin-top: 25px;
+  }
+  .no-conform-entry {
+    font-size: 19px;
+    margin-top: 10px;
+  }
+  .input-field {
+    font-size: 28px;
+    height: 45px;
     width: 80%;
-    height: 140px;
-  }
-  .label-form {
-    font-size: 13px;
-  }
-  .button {
-    padding: 5px 14px;
-    font-size: 0.75rem;
-    margin-top: 8px;
-  }
-  .no-conform {
-    font-size: 10px;
+    border-radius: 10px;
   }
 }
