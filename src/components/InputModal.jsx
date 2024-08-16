@@ -19,17 +19,17 @@ function InputModal({ onSubmitButtonPress }) {
         } else {
           console.log("Division");
           setInputConform(false);
-          setPlaceHolder("You need an even number");
+          setPlaceHolder("Even numbers only, 20 max");
         }
       } else {
         console.log("Size");
         setInputConform(false);
-        setPlaceHolder("You need an even number");
+        setPlaceHolder("Even numbers only, 20 max");
       }
     } else {
       console.log("Symbols");
       setInputConform(false);
-      setPlaceHolder("You need an even number");
+      setPlaceHolder("Even numbers only, 20 max");
     }
   };
 

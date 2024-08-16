@@ -59,7 +59,7 @@
   .no-conform-entry {
     color: rgb(255, 6, 6);
     font-size: 12px;
-    margin-top: 3px;
+    margin-top: 10px;
   }
   
   .button-entry {
@@ -130,18 +130,18 @@
   font-size: 16px;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 375px)  {
   .modal-input {
     width: 70%;
-    height: 170px;
+    height: 185px;
   }
   .label-form-entry {
-    font-size: 17px;
+    font-size: 15px;
   }
   .button-entry {
     padding: 7px 20px;
     font-size: 1rem;
-    margin-top: 15px;
+    margin-top: 20px;
   }
   .no-conform-entry {
     font-size: 14px;
@@ -151,27 +151,73 @@
   }
 }
 
-@media (min-width: 415px) and (max-width: 1025px) {
+@media screen and (min-width: 376px) and (max-width: 480px)  {
   .modal-input {
-    width: 55%;
-    height: 260px;
+    width: 70%;
+    height: 185px;
   }
   .label-form-entry {
-    font-size: 25px;
+    font-size: 17px;
   }
   .button-entry {
-    padding: 11px 35px;
-    font-size: 1.5rem;
-    margin-top: 25px;
+    padding: 7px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
   }
   .no-conform-entry {
-    font-size: 19px;
-    margin-top: 10px;
+    font-size: 14px;
   }
   .input-field {
-    font-size: 28px;
-    height: 45px;
-    width: 80%;
-    border-radius: 10px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) and (orientation: portrait) {
+  .modal-input {
+    width: 45%;
+    height: 200px;
+  }
+  .label-form-entry {
+    font-size: 17px;
+  }
+  .button-entry {
+    padding: 7px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+  .no-conform-entry {
+    font-size: 14px;
+  }
+  .input-field {
+    font-size: 16px;
+  }
+}
+ 
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  
+}
+
+@media screen and (min-width: 1900px) {
+  .modal-input {
+    width: 20%;
+    height: 230px;
+  }
+  .label-form-entry {
+    font-size: 22px;
+  }
+  .button-entry {
+    padding: 7px 20px;
+    font-size: 1.2rem;
+    margin-top: 23px;
+  }
+  .no-conform-entry {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+  .input-field {
+    font-size: 20px;
   }
 }

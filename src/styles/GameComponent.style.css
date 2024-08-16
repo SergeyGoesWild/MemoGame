@@ -1,27 +1,77 @@
 .container-grid {
-    width: 350px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 70px);
-    justify-content: space-between;
-    grid-gap: 10px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    /* justify-content: space-between; */
+    /* grid-gap: 20px; */
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-@media screen and (max-width: 414px) {
+/* .container-grid {
+  width: 350px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 70px);
+  justify-content: space-between;
+  grid-gap: 20px;
+} */
+/* @media screen and (max-width: 375px)  {
     .container-grid {
-        width: 240px;
+        width: 300px;
         display: grid;
-        grid-template-columns: repeat(auto-fill, 65px);
+        grid-template-columns: repeat(auto-fill, 80px);
         justify-content: space-between;
-        grid-gap: 10px;
+        grid-gap: 25px;
     }
-}
-
-@media (min-width: 415px) and (max-width: 1025px) {
+  }
+  
+  @media screen and (min-width: 376px) and (max-width: 480px)  {
     .container-grid {
-        width: 520px;
+        width: 350px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 90px);
+        justify-content: space-between;
+        grid-gap: 30px;
+    }
+  }
+  
+  @media screen and (min-width: 600px) and (max-width: 1000px) and (orientation: portrait) {
+    .container-grid {
+        width: 350px;
         display: grid;
         grid-template-columns: repeat(auto-fill, 95px);
         justify-content: space-between;
-        grid-gap: 20px;
+        grid-gap: 30px;
     }
 }
+   
+  @media screen and (min-width: 1000px) and (max-width: 1200px) {
+    .container-grid {
+        width: 350px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 90px);
+        justify-content: space-between;
+        grid-gap: 30px;
+    }
+  }
+  
+  @media screen and (min-width: 1201px) and (max-width: 1600px) { 
+    .container-grid {
+        width: 350px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 90px);
+        justify-content: space-between;
+        grid-gap: 30px;
+    }
+}
+  
+  @media screen and (min-width: 1900px) {
+    .container-grid {
+        width: 400px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 105px);
+        justify-content: space-between;
+        grid-gap: 35px;
+    }
+  } */

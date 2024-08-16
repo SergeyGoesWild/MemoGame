@@ -5,6 +5,7 @@ import TableGenerator from "./scripts/TableGenerator";
 import InputModal from "./components/InputModal";
 import EndGameModal from "./components/EndGameModal";
 import Confetti from "react-confetti";
+import useWindowSize from "./components/UseWindowSize";
 
 let globalScore = 0;
 
@@ -13,6 +14,7 @@ function App() {
   const [inputSubmited, setInputSubmitted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [confNumber, setConfNumber] = useState(0);
+  const { width, height } = useWindowSize();
 
   const onSubmitButtonPress = (inputValue) => {
     setTilesData(TableGenerator(inputValue));
@@ -33,16 +35,25 @@ function App() {
   };
 
   return (
-    <div className="container-background">
-      <Confetti numberOfPieces={confNumber} />
+    <div
+      className="container-background"
+      style={{
+        width: "10",
+        height: "50",
+        backgroundColor: "rgb(0, 0, 0)",
+      }}
+    >
+      <Confetti width={width} height={height} numberOfPieces={confNumber} />
       {!inputSubmited && (
         <InputModal onSubmitButtonPress={onSubmitButtonPress} />
       )}
+      {inputSubmited && (
+        <div className={gameOver ? "fade-out" : null}>
+          <GameComponent tilesData={tilesData} onVictory={onVictory} />
+        </div>
+      )}
       {gameOver && (
         <EndGameModal score={globalScore} onRestartPress={onRestartPress} />
-      )}
-      {inputSubmited && (
-        <GameComponent tilesData={tilesData} onVictory={onVictory} />
       )}
     </div>
   );

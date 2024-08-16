@@ -5,7 +5,7 @@ import Tile from "./Tile";
 let score = 0;
 let tilesUsed = 0;
 
-function GameComponent({ tilesData, onVictory }) {
+function GameComponent({ tilesData, onVictory, gameOver }) {
   const [data, setData] = useState(tilesData);
   const [firstActiveTile, setFirstActiveTile] = useState(null);
   const [pause, setPause] = useState(false);
@@ -67,6 +67,7 @@ function GameComponent({ tilesData, onVictory }) {
         <div className="container-grid">
           {data.map((item) => (
             <Tile
+              className={gameOver ? "tile-fade-out" : null}
               key={item.id}
               tileObj={item}
               pause={pause}
