@@ -39,26 +39,12 @@
     user-select: none;
 }
 
-@media screen and (max-width: 375px)  {
+@media screen and (max-width: 599px)  {
     .tile-open, .tile-closed {
         border-radius: 15px;
         width: 80px;
         height: 80px;
-    }
-  }
-  
-  @media screen and (min-width: 376px) and (max-width: 480px)  {
-    .tile-open, .tile-closed {
-        border-radius: 15px;
-        width: 90px;
-        height: 90px;
-    }
-    .emoji {
-        text-align: center;
-        font-size: 40px;
-        user-select: none;
-    }
-  }
+    }}
   
   @media screen and (min-width: 600px) and (max-width: 1000px) and (orientation: portrait) {
     .tile-open, .tile-closed {
@@ -68,7 +54,7 @@
     }
     .emoji {
         text-align: center;
-        font-size: 45px;
+        font-size: 35px;
         user-select: none;
     }
   }

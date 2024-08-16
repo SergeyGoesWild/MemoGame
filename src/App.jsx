@@ -48,7 +48,7 @@ function App() {
         <InputModal onSubmitButtonPress={onSubmitButtonPress} />
       )}
       {inputSubmited && (
-        <div className={gameOver ? "fade-out" : null}>
+        <div className={gameOver ? "fade-out" : "game-component"}>
           <GameComponent tilesData={tilesData} onVictory={onVictory} />
         </div>
       )}

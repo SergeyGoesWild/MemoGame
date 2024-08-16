@@ -1,21 +1,31 @@
 .container-grid {
-    width: 500px;
-    height: 500px;
-    display: flex;
-    justify-content: space-evenly;
-    /* justify-content: space-between; */
-    /* grid-gap: 20px; */
-    flex-wrap: wrap;
-    gap: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px; 
 }
 
-/* .container-grid {
-  width: 350px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 70px);
-  justify-content: space-between;
-  grid-gap: 20px;
-} */
+@media screen and (orientation: portrait)  {
+  .container-grid {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows elements to wrap to the next line */
+    gap: 10px; 
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) and (orientation: portrait) {
+  .container-grid {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows elements to wrap to the next line */
+    gap: 10px; 
+  }
+}
+
 /* @media screen and (max-width: 375px)  {
     .container-grid {
         width: 300px;

@@ -63,20 +63,18 @@ function GameComponent({ tilesData, onVictory, gameOver }) {
 
   return (
     <>
-      <div className="container-padding">
-        <div className="container-grid">
-          {data.map((item) => (
-            <Tile
-              className={gameOver ? "tile-fade-out" : null}
-              key={item.id}
-              tileObj={item}
-              pause={pause}
-              onTileClick={() => {
-                handleTileClick(item.id);
-              }}
-            />
-          ))}
-        </div>
+      <div className="container-grid">
+        {data.map((item) => (
+          <Tile
+            className={gameOver ? "tile-fade-out" : null}
+            key={item.id}
+            tileObj={item}
+            pause={pause}
+            onTileClick={() => {
+              handleTileClick(item.id);
+            }}
+          />
+        ))}
       </div>
     </>
   );
